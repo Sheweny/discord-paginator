@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "array-paginator": "^1.2.1",
+    "discord.js": "^13.0.0-dev.2d12db000f2a0a22a8919d7a63989a6e762ae335",
+    "i": "^0.3.6",
+    "npm": "^7.18.1"
+  },
+  "devDependencies": {
+    "@discordjs/voice": "^0.5.0"
+  }
+}
