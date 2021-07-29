@@ -1,7 +1,7 @@
 {
   "dependencies": {
-    "array-paginator": "^1.2.1",
-    "discord.js": "^13.0.0-dev.2d12db000f2a0a22a8919d7a63989a6e762ae335",
+    "array-paginator": "^1.4.1",
+    "discord.js": "^13.0.0-dev.d310e4f.1627560163",
     "i": "^0.3.6",
     "npm": "^7.18.1"
   },
