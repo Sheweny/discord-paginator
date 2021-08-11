@@ -3,6 +3,9 @@
   "description": "This module is a prototype of discord embeds paginator using discord.js V13 and array-paginator module.",
   "version": "1.0.0",
   "main": "dist/index.js",
+  "types" : "./typing/index.d.ts",
+  "private":false,
+  "access": "public",
   "directories": {
     "test": "test"
   },
