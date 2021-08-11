@@ -44,7 +44,7 @@ Options :
 
 ```js
 const { Client, MessageEmbed } = require("discord.js");
-const { EmbedPaginator } = require("../dist/index");
+const { EmbedPaginator } = require("@discord-util/paginator");
 const embed = new MessageEmbed()
   .setTitle("Hi")
   .setColor("orange")
