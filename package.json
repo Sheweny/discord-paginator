@@ -5,7 +5,9 @@
   "main": "dist/index.js",
   "types" : "./typing/index.d.ts",
   "private":false,
-  "access": "public",
+  "publishConfig": {
+    "access": "public"
+  },
   "directories": {
     "test": "test"
   },
