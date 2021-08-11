@@ -1,11 +1,35 @@
 {
-  "dependencies": {
-    "array-paginator": "^1.4.1",
-    "discord.js": "^13.0.0-dev.d310e4f.1627560163",
-    "i": "^0.3.6",
-    "npm": "^7.18.1"
+  "name": "@discord-util/paginator",
+  "description": "This module is a prototype of discord embeds paginator using discord.js V13 and array-paginator module.",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "directories": {
+    "test": "test"
   },
-  "devDependencies": {
-    "@discordjs/voice": "^0.5.0"
+  "scripts": {
+    "build": "tsc",
+    "build:typing": "tsc --build tsconfig.typing.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Smaug6739/discord-paginator.git"
+  },
+  "keywords": [
+    "discord",
+    "discord-paginator",
+    "paginator",
+    "djs-V13",
+    "embeds",
+    "buttons"
+  ],
+  "author": "Smaug6739",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Smaug6739/discord-paginator/issues"
+  },
+  "homepage": "https://github.com/Smaug6739/discord-paginator#readme",
+  "dependencies": {
+    "array-paginator": "^1.5.2",
+    "discord.js": "^13.0.1"
   }
 }

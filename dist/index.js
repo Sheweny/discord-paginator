@@ -1,13 +1,4 @@
 "use strict";
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.EmbedPaginator = void 0;
 const array_paginator_1 = require("array-paginator");
@@ -27,20 +18,18 @@ class EmbedPaginator {
         // }
         this.init();
     }
-    init() {
-        return __awaiter(this, void 0, void 0, function* () {
-            // Verifications :
-            if (this.pager.total < 2)
-                throw new Error('A Pagination Embed must contain at least 2 pages');
-            // Send the message
-            this.message = yield this.channel.send({ embeds: this.pager.first(), components: [this.getComponents()] });
-            // React to the message
-            // for (const emoji in this.emojis) {
-            // 	if (emoji === 'all') continue;
-            // 	await this.message!.react(this.emojis[emoji])
-            // }
-            this.listenReactions();
-        });
+    async init() {
+        // Verifications :
+        if (this.pager.total < 2)
+            throw new Error('A Pagination Embed must contain at least 2 pages');
+        // Send the message
+        this.message = await this.channel.send({ embeds: this.pager.first(), components: [this.getComponents()] });
+        // React to the message
+        // for (const emoji in this.emojis) {
+        // 	if (emoji === 'all') continue;
+        // 	await this.message!.react(this.emojis[emoji])
+        // }
+        this.listenReactions();
     }
     getComponents() {
         const row = new discord_js_1.MessageActionRow()
@@ -69,7 +58,7 @@ class EmbedPaginator {
     listenReactions() {
         const filter = (i) => i.message.id === this.message.id && i.user.id === this.summoner;
         const collector = this.channel.createMessageComponentCollector({ filter: filter });
-        collector.on('collect', (i) => __awaiter(this, void 0, void 0, function* () {
+        collector.on('collect', async (i) => {
             switch (i.customId) {
                 case 'first':
                     if (this.pager.first())
@@ -88,7 +77,7 @@ class EmbedPaginator {
                         this.changePage(this.pager.last(), i);
                     break;
             }
-        }));
+        });
     }
     changePage(page, interaction) {
         interaction.update({
